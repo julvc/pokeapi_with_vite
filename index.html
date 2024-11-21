@@ -8,9 +8,9 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <img src="https://d33wubrfki0l68.cloudfront.net/547a9970a7d43be64cdf108f330a8dd372d72c90/45801/images/pokemon_logo.png" alt="pokeLogo" style="height: 260px;">
-        <img src="./img/pokedex3.png" alt="pokedex" style="height: 190px;">
+      <div class="container-header">
+        <img class="logo-image" src="https://d33wubrfki0l68.cloudfront.net/547a9970a7d43be64cdf108f330a8dd372d72c90/45801/images/pokemon_logo.png" alt="pokeLogo">
+        <img class="pokedex-image" src="./img/pokedex3.png" alt="pokedex" >
       </div>
     </header>
 
@@ -19,7 +19,7 @@
 
     <div class="filter-container">
       <select id="type-filter">
-        <option value="">Todos los tipos</option>
+        <option value="">All Types</option>
         <option value="fire">Fire</option>
         <option value="water">Water</option>
         <option value="grass">Grass</option>
@@ -39,11 +39,11 @@
         <option value="steel">Steel</option>
       </select>
     
-      <input type="number" id="min-weight-filter" placeholder="Peso mínimo (kg)">
-      <input type="number" id="min-height-filter" placeholder="Filtrar por Altura (cm)">
+      <input type="number" id="min-weight-filter" placeholder="Minimun Weigth (kg)">
+      <input type="number" id="min-height-filter" placeholder="Minimun Height (cm)">
     </div>
     <div class="search-container">
-      <input type="text" id="search-input" class="search-input" placeholder="Busca Pokemon por nombre o ID">
+      <input type="text" id="search-input" class="search-input" placeholder="Search Pokemon by Name or Id">
       <button id="search-button" class="search-button">Search</button>
       <button id="clear-button" class="clear-button">Reset</button>
     </div>

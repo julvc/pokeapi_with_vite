@@ -17,11 +17,13 @@ body {
 }
 
 header {
-  text-align: center;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  padding: 1rem 0;
+  height: auto;
+  position: relative;
 }
 
 header img {
@@ -30,76 +32,59 @@ header img {
   filter: drop-shadow(0 0 20px rgba(225, 3, 159, 0.7));
 }
 
+.container-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.logo-image {
+  height: auto;
+  max-height: 300px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.pokedex-image {
+  height: auto;
+  max-height: 200px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
 h1 {
   font-style: italic;
-  font-size: 2.5rem;
   color: #f4f4f4;
   text-align: center;
-  margin: 0;
   padding: 10px;
   text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   filter: drop-shadow(0 0 10px rgba(245, 245, 245, 0.7));
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin: 0 auto; 
+  line-height: 1.2;
 }
 
 .grid-layout {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
   width: 100%;
   margin-top: 20px;
 }
-
-@media (max-width: 1200px) {
-  .grid-layout {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .grid-layout {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media(max-width: 768px){
-  h1 {
-    font-size: 1.8rem;
-    padding: 5px;
-  }
-  .grid-layout {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-    padding: 5px;
-  }
-  .grid-layout {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-}
-
-@media (max-width: 400px) {
-  h1 {
-    font-size: 1.5rem;
-    padding: 5px;
-  }
-  .grid-layout {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-}
-
 .card {
-  background-color: #36aee6;
   color: #f9f9f9;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 1rem;
+  border-radius: 8px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -109,15 +94,17 @@ h1 {
 }
 
 .pokemon-card {
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .pokemon-image {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  margin-bottom: 0.5rem;
 }
 
 .pokemon-info {
@@ -190,20 +177,17 @@ h1 {
   border-color: #6366f1;
 }
 
-
-
-
 .search-container {
-  display: flex; /* Cambia de grid a flex */
-  gap: 10px; /* Espacio entre los elementos */
+  display: flex;
+  gap: 10px;
   background-color: #fff;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 10px 15px;
   width: 650px; 
   max-width: 100%; 
-  justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
-  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: flex-start;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -262,7 +246,7 @@ h1 {
 
 .alert {
   display: flex;
-  justify-content: space-between; /* Distribuye espacio equitativamente */
+  justify-content: space-between;
   align-items: center;
   padding: 15px;
   border-radius: 8px;
@@ -278,7 +262,7 @@ h1 {
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: auto; /* Empuja el botón a la derecha */
+  margin-left: auto;
 }
 
 .alert p {
@@ -295,4 +279,40 @@ h1 {
   background-color: #ea4b4b;
   border-color: #f80000;
   color: #e12d00;
+}
+
+@media (max-width: 768px) {
+  .container-img {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo-image {
+    max-height: 220px;
+  }
+
+  .pokedex-image {
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container-img {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo-image {
+    max-height: 180px;
+  }
+
+  .pokedex-image {
+    max-height: 140px;
+  }
 }
